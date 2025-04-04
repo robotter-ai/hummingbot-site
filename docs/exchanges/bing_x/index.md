@@ -23,7 +23,7 @@
 
 1. Go to [BingX Exchange](https://bingx.com/) and log in or create a new account.
 
-2. When creating your account you can use our Referral Code (`7VFN4OVG`) or Hummingbot's code (`hummingbot`) to enjoy 20% rebate. 
+2. When creating your account you can use our Referral Code (`7VFN4OVG`) to enjoy 20% rebate. 
 
     ![Referral Code](bingx-api5.png)
 
