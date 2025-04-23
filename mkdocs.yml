@@ -348,7 +348,7 @@ nav:
     - Uniswap : exchanges/gateway/uniswap.md
     - Tegro: exchanges/tegro/index.md
     - Vertex: exchanges/vertex.md
-    - VVS: exchanges/gateway/vvs.md
+    - VVS: exchanges/gateway/vvs.md    
   - Community:
     - Community: community/index.md
     - Discord Server: community/discord.md
@@ -404,7 +404,7 @@ nav:
     - 1.1.0: release-notes/1.1.0.md
     - 1.0.1: release-notes/1.0.1.md
     - 1.0.0: release-notes/1.0.0.md
-  - Bounties:
+  - Bounties: 
     - Bounties: bounties/index.md
     - Lifecycle of a Bounty: bounties/lifecycle.md
     - Pricing & Payments: bounties/pricing.md
