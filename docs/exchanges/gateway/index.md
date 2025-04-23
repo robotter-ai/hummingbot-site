@@ -29,21 +29,22 @@ If you're interested in contributing a new Gateway DEX connector, check out our 
 
 Here are the Gateway connectors in the codebase for the current [Epoch](/governance/epochs/).
 
-| Exchange | Chain Type | Legacy | New | Connector Types | Guide |
-|----------|------------|--------|-----|----------------|-------|
-| [Jupiter](./jupiter.md) | `solana` | | ✓ | `swap` | |
-| [Meteora](./meteora.md) | `solana` | | ✓ | `clmm` | |
-| [Raydium](./raydium.md) | `solana` | | ✓ | `clmm`, `amm` | |
-| [Balancer](./balancer.md) | `ethereum` | ✓ |  | `amm` | |
-| [Carbon](./carbon.md) | `ethereum` | ✓ |  | `amm` | |
-| [Curve](./curve.md) | `ethereum` | ✓ |  | `amm` | |
-| [ETCSwap](./etcSwap.md) | `ethereum` | ✓ |  | `amm`, `amm_lp` | |
-| [Mad Meerkat](./mad-meerkat.md) | `cronos` | ✓ |  | `amm` | |
-| [Osmosis](./osmosis.md) | `osmosis` | ✓ |  | `amm` | [Guide](/blog/using-osmosis-with-hummingbot/) |
+| Exchange                        | Chain Type            | Legacy | New | Connector Types | Guide |
+|---------------------------------|-----------------------|--------|-----|--------|-------|
+| [Jupiter](./jupiter.md)         | `solana`              | | ✓ | `swap` | |
+| [Meteora](./meteora.md)         | `solana`              | | ✓ | `clmm` | |
+| [Raydium](./raydium.md)         | `solana`              | | ✓ | `clmm`, `amm` | |
+| [Hydration](./polkadot.md)      | `polkadot`            | | ✓ | `amm` | |
+| [Balancer](./balancer.md)       | `ethereum`            | ✓ |  | `amm` | |
+| [Carbon](./carbon.md)           | `ethereum`            | ✓ |  | `amm` | |
+| [Curve](./curve.md)             | `ethereum`            | ✓ |  | `amm` | |
+| [ETCSwap](./etcSwap.md)         | `ethereum`            | ✓ |  | `amm`, `amm_lp` | |
+| [Mad Meerkat](./mad-meerkat.md) | `cronos`              | ✓ |  | `amm` | |
+| [Osmosis](./osmosis.md)         | `osmosis`             | ✓ |  | `amm` | [Guide](/blog/using-osmosis-with-hummingbot/) |
 | [Pancakeswap](./pancakeswap.md) | `binance-smart-chain` | ✓ |  | `amm`, `amm_lp` | |
-| [Quickswap](./quickswap.md) | `polygon` | ✓ |  | `amm` | |
-| [Sushiswap](./sushiswap.md) | `ethereum` | ✓ |  | `amm` | |
-| [Tinyman](./tinyman.md) | `algorand` | ✓ |  | `amm` | |
-| [TraderJoe](./traderjoe.md) | `avalanche` | ✓ |  | `amm` | |
-| [Uniswap](./uniswap.md) | `ethereum` | ✓ | | `amm`, `amm_lp` | |
-| [VVS](./vvs.md) | `cronos` | ✓ |  | `amm` | |
+| [Quickswap](./quickswap.md)     | `polygon`             | ✓ |  | `amm` | |
+| [Sushiswap](./sushiswap.md)     | `ethereum`            | ✓ |  | `amm` | |
+| [Tinyman](./tinyman.md)         | `algorand`            | ✓ |  | `amm` | |
+| [TraderJoe](./traderjoe.md)     | `avalanche`           | ✓ |  | `amm` | |
+| [Uniswap](./uniswap.md)         | `ethereum`            | ✓ | | `amm`, `amm_lp` | |
+| [VVS](./vvs.md)                 | `cronos`              | ✓ |  | `amm` | |
