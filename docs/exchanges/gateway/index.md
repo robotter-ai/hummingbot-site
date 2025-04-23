@@ -31,10 +31,10 @@ Here are the Gateway connectors in the codebase for the current [Epoch](/governa
 
 | Exchange                        | Chain Type            | Legacy | New | Connector Types | Guide |
 |---------------------------------|-----------------------|--------|-----|--------|-------|
+| [Hydration](./polkadot.md)      | `polkadot`            | | ✓ | `amm` | |
 | [Jupiter](./jupiter.md)         | `solana`              | | ✓ | `swap` | |
 | [Meteora](./meteora.md)         | `solana`              | | ✓ | `clmm` | |
 | [Raydium](./raydium.md)         | `solana`              | | ✓ | `clmm`, `amm` | |
-| [Hydration](./polkadot.md)      | `polkadot`            | | ✓ | `amm` | |
 | [Balancer](./balancer.md)       | `ethereum`            | ✓ |  | `amm` | |
 | [Carbon](./carbon.md)           | `ethereum`            | ✓ |  | `amm` | |
 | [Curve](./curve.md)             | `ethereum`            | ✓ |  | `amm` | |
