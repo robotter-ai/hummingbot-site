@@ -1,3 +1,6 @@
+!!! tip "Foundation Partner"
+    Bitmart is an [exchange partner](/about/sponsors) of Hummingbot Foundation, so when you use Hummingbot to run bots on Bitmart, a portion of your fees goes to support the Foundation and our mission to democratize algo trading with open source software. To help support us, create an account using our [Bitmart referral link](https://www.bitmart.com/invite/Hummingbot/en) and enter that account's API keys into Hummingbot and run bots! Thanks for your help! 🙏
+
 ## 🛠 Connector Info
 
 - **Exchange Type**: Centralized Exchange (**CEX**)
@@ -17,7 +20,7 @@
 - **CoinGecko**: <https://www.coingecko.com/en/exchanges/bitmart>
 - **API Docs**: <https://www.bitmart.com/api-docs>
 - **Fees**: <https://www.bitmart.com/fee/en>
-- **Supported Countries**: Not available
+- **Referral link:** <https://www.bitmart.com/invite/Hummingbot/en>
 
 ## 🔑 How to Connect
 

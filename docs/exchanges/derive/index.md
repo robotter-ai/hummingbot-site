@@ -1,6 +1,9 @@
+!!! tip "Foundation Sponsor"
+    Derive is a [sponsor](/about/sponsors) of Hummingbot Foundation, so when you use Hummingbot to run bots on Derive, you're supporting the Foundation and our mission to democratize algo trading with open source software. To help support us, create an account using our [Derive referral link](https://www.derive.xyz/invite/7SA0V). Thanks for your help! 🙏
+
 ## 🛠 Connector Info
 
-- **Exchange Type**: Decentralized Exchange (**Dex**)
+- **Exchange Type**: Decentralized Exchange (**DEX**)
 - **Market Type**: Central Limit Order Book (**CLOB**)
 
 | Component | Status | Connector Version | V2 Strategies | Notes | 
@@ -18,7 +21,7 @@
 - **CoinGecko**: <https://www.coingecko.com/en/coins/derive>
 - **Fees**: <https://docs.derive.xyz/reference/fees-1>
 - **Supported Countries**: <https://www.derive.xyz/terms-of-use#:~:text=restricted%20region>
-- **Derive referral link:** <https://docs.derive.xyz/docs/referral-rewards-program>
+- **Referral link:** <https://www.derive.xyz/invite/7SA0V>
 
 ## 🔑 About Rate Limits
 
@@ -29,6 +32,50 @@
     ![API](rate-limit-api9.png)
 
 - **Derive Rate Limit:**  <https://docs.derive.xyz/reference/rate-limits>
+
+# Rate Limits
+
+The below rate limits have been implemented to safeguard our system. Rate limiters use a **"fixed window" algorithm** to discretely refill the request allowance every 5 seconds.
+
+**Market makers are eligible for higher rate limits.**  
+To apply for increased rates, please contact our support team.
+
+| Type          | Matching | Per-Instrument Matching | Non-Matching | Connections      | Burst Multiplier |
+|---------------|----------|--------------------------|---------------|------------------|------------------|
+| Trader        | 1 TPS    | 1 TPS                    | 5 TPS         | 4x per IP        | 5x               |
+| Market Maker  | 500+ TPS | 10+ TPS                  | 500+ TPS      | up to 64x per IP | 5x               |
+
+> **Note:**  
+> Burst requests for both REST and WebSockets are refreshed every 5 seconds.  
+> For example, a trader can send 5× matching requests in a single burst but must wait 5 seconds before any further requests can be sent.
+
+
+## Matching, Non-Matching, and Custom Requests
+
+The below requests are counted as **matching** and **per-instrument matching** requests:
+
+- `private/order`
+- `private/replace` *(counted as 1 request)*
+- `private/cancel`
+- `private/cancel_by_nonce`
+- `private/cancel_by_instrument`
+- `private/cancel_by_label` *(if `instrument_name` param is set)*
+
+### Custom Rate-Limited Requests
+
+- `private/cancel_all` – **1 TPS**
+- `private/cancel_by_label` – **10 TPS** *(if `instrument_name` param is **NOT** set)*
+
+All requests outside of the above are counted as **non-matching**.
+
+---
+
+## REST
+
+All **non-matching** requests over the **REST API** are rate limited per IP at a flat **10 TPS** with a **5x burst**.
+
+If the limit is crossed, a **`429 Too Many Requests`** response is returned.
+
 
 ## 🔑 How to Connect
 
@@ -78,6 +125,8 @@ Enter Your Derive Wallet address >>>
 Enter your wallet private key >>>
 
 Enter your Subaccount ID >>>
+
+Enter your Derive Account Type (trader/market_maker) >>>
 
 ```
 
@@ -134,6 +183,7 @@ From inside the Hummingbot client, run `connect derive_perpetual`:
 Enter Your DerivePerpetual Wallet address >>>
 Enter your wallet private key >>>
 Enter your Subaccount ID >>>
+Enter your Derive Account Type (trader/market_maker) >>>
 
 ```
 
