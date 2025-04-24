@@ -27,7 +27,7 @@ Here are the Gateway connectors in the codebase for the current [Epoch](/governa
 
 | Exchange | Chain Type | Legacy | New | Connector Types | Guide |
 |----------|------------|--------|-----|----------------|-------|
-| [Hydration](/exchanges/gateway/hydration) | `polkadot` | | ✓ | `amm` | |
+| [Hydration](/exchanges/gateway/hydration) | `polkadot` | | ✓ | `amm`, `swap` | |
 | [Jupiter](/exchanges/gateway/jupiter) | `solana` | | ✓ | `swap` | |
 | [Meteora](/exchanges/gateway/meteora) | `solana` | | ✓ | `clmm` | |
 | [Raydium](/exchanges/gateway/raydium) | `solana` | | ✓ | `clmm`, `amm` | |
