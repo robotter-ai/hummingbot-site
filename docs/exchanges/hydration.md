@@ -1,7 +1,21 @@
+!!! note
+This connector has been upgraded to the **Gateway New (v2.5+)** standard and available in the current `development` branch. For installation instructions, refer to the [Installation & Setup](../../gateway/installation.md) page.
+
 ## 🛠 Connector Info
 
-- **Exchange Type**: Decentralized Exchange (DEX)
-- **Market Type**: Automatic Market Maker (AMM)
+* **Chain**: [Polkadot](/gateway/chains/polkadot)
+* **Available Networks**: `mainnet`
+* **Exchange Type**: Decentralized Exchange (DEX)
+* **Market Type**: Automatic Market Maker (AMM)
+
+
+| Connectors      | Route Schemas | Notes                                                     | 
+|-----------------|---------------|-----------------------------------------------------------|
+| `hydration/amm` | SWAP, AMM     | Supports Hydration Standard AMM pools and swap operations |
+
+
+See [Route Schemas](/gateway/schemas) for more information about the endpoints defined by each connector.
+
 
 | Component | Status | Notes | 
 | --------- | ------ | ----- |
@@ -11,28 +25,31 @@
 
 ## ℹ️ Exchange Info
 
-- **Website**: <https://hydration.net/>
-- **CoinGecko**: <https://www.coingecko.com/en/exchanges/hydration>
 - **Fees**: <https://docs.hydration.net/products/trading/fees/>
+- **Website**: <https://hydration.net/>
+- **SDK Docs**: <https://github.com/galacticcouncil/sdk>
+- **CoinGecko**: <https://www.coingecko.com/en/exchanges/hydration>
+- **DefiLlama**: <https://defillama.com/protocol/hydration>
+- **DEXScreener**: <https://dexscreener.com/polkadot/hydration>
 
 ## 🔑 How to Connect
 
-Create a wallet on one of the supported networks below:
-
 | Chain | Networks | 
 | ----- | -------- |
-| `polkadot` | `mainnet`, `testnet` 
+| `polkadot` | `mainnet`
+
+!!! warning
+This connection interface is likely to change in future releases as we continue to improve the Gateway architecture.
 
 From inside the Hummingbot client, run `gateway connect hydration` in order to connect your wallet:
 
 ```
 Which chain do you want hydration to connect to? (polkadot) >>> polkadot
-Which network do you want hydration to connect to? (mainnet, testnet) >>> mainnet
+Which network do you want hydration to connect to? (mainnet) >>> mainnet
 Enter your polkadot-mainnet private key >>>>
 ```
 
 If connection is successful:
-
 ```
 The hydration connector now uses wallet [pubKey] on polkadot-mainnet
 ```
@@ -43,32 +60,25 @@ The hydration connector now uses wallet [pubKey] on polkadot-mainnet
 
 - **ID**: `hydration`
 - **Connection Type**: REST via [Gateway](/gateway)
-- **API Docs**: <https://hydration.net/docs>
-- **Folder**: <https://github.com/hummingbot/gateway/tree/main/src/connectors/hydration>
-- **Default Configs**: <https://github.com/hummingbot/gateway/blob/main/src/templates/hydration.yml>
+- **API Docs**: <https://apidocs.bsx.fi/Hydration>
+- **Folder**: [/gateway/src/connectors/hydration](https://github.com/hummingbot/gateway/tree/development/src/connectors/hydration)
+- **Default Configs**: [/gateway/src/templates/hydration](https://github.com/hummingbot/gateway/tree/development/src/templates/hydration.yml)
+- **Config Schema**: [/gateway/src/services/schema/hydration-schema.json](https://github.com/hummingbot/gateway/tree/development/src/services/schema/hydration-schema.json)
 
-### Endpoints
+Upon Gateway setup, a default `hydration.yml` configuration file matching the schema is created in your `conf` folder based on the [template](https://github.com/hummingbot/gateway/tree/development/src/templates/hydration.yml) below:
 
-- `/amm/price`
-- `/amm/trade`
+```yaml
+allowedSlippage: '1/100'
 
-
-For more info, run Gateway and go to <https:localhost:8080> in your browser to see detailed documentation for each endpoint.
-
-## 🕯 AMM Data Feed
-*Data feed of this exchange's real-time prices*
-
-- **ID**: `hydration_[CHAIN]_[NETWORK]`
-- **Connection Type**: REST via [Gateway](/gateway)
-- **Folder**: <https://github.com/hummingbot/hummingbot/blob/master/hummingbot/data_feed/amm_gateway_data_feed.py>
-
-### Usage
-
-```python
-from hummingbot.data_feed.amm_gateway_data_feed import AmmGatewayDataFeed
-prices = AmmGatewayDataFeed(
-        connector_chain_network="hydration_polkadot_mainnet",
-        trading_pairs={"USDC-HDX", "USDC-USDT"},
-        order_amount_in_base=Decimal("1"),
-    )
 ```
+### Slippage
+
+- Defines the price slippage allowed when quoting and executing a swap
+- `allowedSlippage: '1/100'` means 1% price movement allowed
+
+### Pool Addresses
+
+- These addresses are required for Hummingbot strategies to interact with the correct pools when trading on AMM
+- Add your frequently used pairs to the configuration for easy access in strategies
+- Format: `TOKEN1-TOKEN2: 'pool_address'`
+- Example: `HDX-USDT: '7JRrXBpB1K2JUapwojTYLZPoMvLPMQUDyiEyJb5hj7wad1of'`
