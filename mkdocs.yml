@@ -281,6 +281,7 @@ nav:
         - Strategies & Scripts: gateway/legacy/running-dex-bots.md
       - Supported Chains:
         - Supported Chains: gateway/chains/index.md
+        - 🔼 Polkadot: gateway/chains/polkadot.md
         - 🔼 Solana: gateway/chains/solana.md
         - 🔼 Ethereum: gateway/chains/ethereum.md
         - Algorand: gateway/chains/algorand.md
@@ -291,7 +292,6 @@ nav:
         - Ethereum Classic: gateway/chains/ethereum-classic.md
         - Osmosis: gateway/chains/osmosis-chain.md
         - Polygon: gateway/chains/polygon.md
-        - Polkadot: gateway/chains/polkadot.md
     - Hummingbot Dashboard:
       - Hummingbot Dashboard: dashboard/index.md
       - Adding Credentials: dashboard/credentials.md
