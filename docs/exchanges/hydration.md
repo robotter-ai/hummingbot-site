@@ -1,12 +1,14 @@
 !!! note
 This connector has been upgraded to the **Gateway New (v2.5+)** standard and available in the current `development` branch. For installation instructions, refer to the [Installation & Setup](../../gateway/installation.md) page.
 
-## 🛠 Connector Info
+## ℹ️ Exchange Info
 
-* **Chain**: [Polkadot](/gateway/chains/polkadot)
-* **Available Networks**: `mainnet`
-* **Exchange Type**: Decentralized Exchange (DEX)
-* **Market Type**: Automatic Market Maker (AMM)
+- **Fees**: <https://docs.hydration.net/products/trading/fees/>
+- **Website**: <https://hydration.net/>
+- **SDK Docs**: <https://github.com/galacticcouncil/sdk>
+- **CoinGecko**: <https://www.coingecko.com/en/exchanges/hydration>
+- **DefiLlama**: <https://defillama.com/protocol/hydration>
+- **DEXScreener**: <https://dexscreener.com/polkadot/hydration>
 
 
 | Connectors      | Route Schemas | Notes                                                     | 
@@ -23,14 +25,14 @@ See [Route Schemas](/gateway/schemas) for more information about the endpoints d
 | [3️⃣ Range AMM Connector](#3-range-amm-connector) | Not built |
 | [🕯 AMM Data Feed](#amm-data-feed) | ✅ |
 
-## ℹ️ Exchange Info
 
-- **Fees**: <https://docs.hydration.net/products/trading/fees/>
-- **Website**: <https://hydration.net/>
-- **SDK Docs**: <https://github.com/galacticcouncil/sdk>
-- **CoinGecko**: <https://www.coingecko.com/en/exchanges/hydration>
-- **DefiLlama**: <https://defillama.com/protocol/hydration>
-- **DEXScreener**: <https://dexscreener.com/polkadot/hydration>
+## 🛠 Connector Info
+
+* **Chain**: [Polkadot](/gateway/chains/polkadot)
+* **Available Networks**: `mainnet`
+* **Exchange Type**: Decentralized Exchange (DEX)
+* **Market Type**: Automatic Market Maker (AMM)
+
 
 ## 🔑 How to Connect
 
@@ -41,12 +43,12 @@ See [Route Schemas](/gateway/schemas) for more information about the endpoints d
 !!! warning
 This connection interface is likely to change in future releases as we continue to improve the Gateway architecture.
 
-From inside the Hummingbot client, run `gateway connect hydration` in order to connect your wallet:
+From inside the Hummingbot client, run `gateway connect hydration/amm` in order to connect your wallet:
 
 ```
 Which chain do you want hydration to connect to? (polkadot) >>> polkadot
 Which network do you want hydration to connect to? (mainnet) >>> mainnet
-Enter your polkadot-mainnet private key >>>>
+Enter your polkadot-mainnet mnemonic >>>>
 ```
 
 If connection is successful:
@@ -55,14 +57,14 @@ The hydration connector now uses wallet [pubKey] on polkadot-mainnet
 ```
 
 
-## 2️⃣ AMM Connector
+## ⚙️ Connector Configs
 *Integration to this DEX's swap pricing and execution endpoints*
 
 - **ID**: `hydration`
 - **Connection Type**: REST via [Gateway](/gateway)
 - **API Docs**: <https://apidocs.bsx.fi/Hydration>
 - **Folder**: [/gateway/src/connectors/hydration](https://github.com/hummingbot/gateway/tree/development/src/connectors/hydration)
-- **Default Configs**: [/gateway/src/templates/hydration](https://github.com/hummingbot/gateway/tree/development/src/templates/hydration.yml)
+- **Default Configs**: [/gateway/src/templates/hydration.yml](https://github.com/hummingbot/gateway/tree/development/src/templates/hydration.yml)
 - **Config Schema**: [/gateway/src/services/schema/hydration-schema.json](https://github.com/hummingbot/gateway/tree/development/src/services/schema/hydration-schema.json)
 
 Upon Gateway setup, a default `hydration.yml` configuration file matching the schema is created in your `conf` folder based on the [template](https://github.com/hummingbot/gateway/tree/development/src/templates/hydration.yml) below:

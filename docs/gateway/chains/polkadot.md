@@ -5,6 +5,7 @@ This chain has been upgraded to the **Gateway New (v2.5+)** architecture and is 
 
 * Folder: [/gateway/src/chains/polkadot](https://github.com/hummingbot/gateway/tree/development/chains/polkadot)
 * Configs: [/gateway/src/templates/polkadot.yml](https://github.com/hummingbot/gateway/tree/src/templates/polkadot.yml)
+* Config Schema: [/gateway/src/services/schema/polkadot-schema.json](https://github.com/hummingbot/gateway/blob/development/src/services/schema/polkadot-schema.json)
 
 ## ℹ️ Chain Info
 
