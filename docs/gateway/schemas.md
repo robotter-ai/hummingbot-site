@@ -86,6 +86,21 @@ You can view all available connectors and their supported trading types by makin
           ]
         }
       ]
+    },
+    {
+      "name": "hydration/amm",
+      "trading_types": [
+        "amm",
+        "swap"
+      ],
+      "available_networks": [
+        {
+          "chain": "polkadot",
+          "networks": [
+            "mainnet"
+          ]
+        }
+      ]
     }
   ]
 }
